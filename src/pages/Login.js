@@ -1,17 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Spinner from "../components/layout/Spinner";
 import { setUser } from "../redux/userSlice";
-import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 
 const Login = () => {
+  const userRedux = useSelector((state) => state.user);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   let navigate = useNavigate();
+
+  useEffect(() => {
+    userRedux.id && navigate("/", { replace: true });
+  }, [userRedux]);
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -42,8 +46,8 @@ const Login = () => {
           })
         );
         console.log(username, password);
-        //navigate("/invoices");
-      }, 3000);
+        //navigate("/home", { replace: true });
+      }, 1000);
     }
   };
 

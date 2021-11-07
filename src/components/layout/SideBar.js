@@ -24,7 +24,7 @@ const SideBar = () => {
 
       {/* Nav Item - Dashboard */}
       <li className="nav-item">
-        <NavLink to="/home" className="nav-link">
+        <NavLink to="/" className="nav-link">
           <i className="fas fa-fw fa-tachometer-alt" />
           <span>Inicio</span>
         </NavLink>

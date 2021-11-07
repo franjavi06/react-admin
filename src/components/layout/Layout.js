@@ -3,6 +3,8 @@ import React from "react";
 import SideBar from "./SideBar";
 import Footer from "./Footer";
 import TopBar from "./TopBar";
+import { Link } from "react-router-dom";
+import LogoutModal from "./LogoutModal";
 
 const Layout = (props) => {
   return (
@@ -28,6 +30,13 @@ const Layout = (props) => {
         {/* End of Content Wrapper */}
       </div>
       {/* End of Page Wrapper */}
+
+      {/* Scroll to Top Button*/}
+      <a className="scroll-to-top rounded" href="#page-top">
+        <i className="fas fa-angle-up" />
+      </a>
+
+      <LogoutModal />
     </>
   );
 };

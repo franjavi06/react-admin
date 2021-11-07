@@ -17,8 +17,15 @@ const userSlice = createSlice({
       state.lastname = action.payload.lastname;
       state.expiresAt = action.payload.expiresAt;
     },
+    unsetUser: (state) => {
+      state.id = "";
+      state.username = "";
+      state.firstname = "";
+      state.lastname = "";
+      state.expiresAt = "";
+    },
   },
 });
 
-export const { setUser } = userSlice.actions;
+export const { setUser, unsetUser } = userSlice.actions;
 export default userSlice.reducer;

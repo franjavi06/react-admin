@@ -1,10 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import profile from "../../images/undraw_profile.svg";
 import profile1 from "../../images/undraw_profile_1.svg";
 import profile2 from "../../images/undraw_profile_2.svg";
 import profile3 from "../../images/undraw_profile_3.svg";
 
 const TopBar = () => {
+  const userRedux = useSelector((state) => state.user);
   return (
     <>
       {/* Topbar */}
@@ -237,7 +239,7 @@ const TopBar = () => {
               aria-expanded="false"
             >
               <span className="mr-2 d-none d-lg-inline text-gray-600 small">
-                Douglas McGee
+                {userRedux.firstname}
               </span>
               <img className="img-profile rounded-circle" src={profile} />
             </a>

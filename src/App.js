@@ -8,14 +8,11 @@ import Page from "./pages/Page";
 import NotFound from "./pages/NotFound";
 
 function App() {
-  const userRedux = useSelector((state) => state.user);
-  const [user, setUser] = useState(userRedux);
-  console.log(user);
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/" element={<AppContainer />}>
-        <Route path="home" element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="page" element={<Page />} />
         <Route path="*" element={<NotFound />} />
       </Route>

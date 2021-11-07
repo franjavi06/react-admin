@@ -1,7 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Page = () => {
-  return <div>Page</div>;
+  return (
+    <div>
+      <Link to="/">Ir al login</Link>
+    </div>
+  );
 };
 
 export default Page;
